@@ -9,7 +9,7 @@ bare clone with no workspace, the full guide is at <https://docs.start9.com/pack
 ## This repo
 
 - **Two homes.** The package is developed in `startos/` of
-  [DigiMonk73/BTCTX-MCP](https://github.com/DigiMonk73/BTCTX-MCP) (by pull request into `develop`),
+  [DigiMonk73/BTCTX-MCP](https://github.com/DigiMonk73/BTCTX-MCP) (by pull request into `staging`),
   mirrored to [DigiMonk73/BTCTX-StartOS](https://github.com/DigiMonk73/BTCTX-StartOS),
   and reaches [Start9-Community/BTCTX-StartOS](https://github.com/Start9-Community/BTCTX-StartOS)
   only as a pull request from that mirror. A change made on the Start9 fork must be
@@ -26,5 +26,6 @@ bare clone with no workspace, the full guide is at <https://docs.start9.com/pack
   the package is translated (the i18n dictionaries, the release notes in `versions/`,
   the store listing): the app is English-only, so a translated name points at a screen
   that doesn't exist.
-- **Checks:** `rm -rf javascript && make javascript/index.js && node scripts/check-manifest.mjs`
-  (`make` type-checks, lints, format-checks and bundles).
+- **Checks:** `npm run format:check && rm -rf javascript && make javascript/index.js && node scripts/check-manifest.mjs`
+  (`make` type-checks, lints and bundles; from start-sdk 3.1.0 it formats
+  instead of checking, so the format check comes first).
